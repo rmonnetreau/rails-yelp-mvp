@@ -11,4 +11,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :restaurants do
+    resources :reviews, only: %i[new create]
+
+    member do
+      get "average_rating"
+    end
+
+    collection do
+      get "top"
+    end
+  end
 end

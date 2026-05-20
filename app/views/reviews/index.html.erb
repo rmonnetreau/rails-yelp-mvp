@@ -1,0 +1,13 @@
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <div class="card mb-2">
+        <div class="card-body">
+           <p class="card-text"><%= review.content %></p>
+           <p class="card-text"><strong><%= review.rating %> / 5</strong></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to restaurant details", restaurant_path(@restaurant), class: "btn btn-secondary mt-4" %>
